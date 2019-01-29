@@ -1,0 +1,37 @@
+{
+    "name": "Wiki",
+    "author": "EmpireDev",
+    "version": "1.0.6",
+    "apiID": 0,
+    "admin_menus": {
+        "GLOBAL__ADMIN_PLUGINS": {
+            "Wiki": {
+                "icon": "archive",
+                "menu": {
+                    "WIKI__ADMIN_NAVBAR1": {
+                        "icon": "cog",
+                        "route": "/admin/wiki/categories"
+                    },
+                    "WIKI__ADMIN_NAVBAR2": {
+                        "icon": "cog",
+                        "route": "/admin/wiki/registre"
+                    }
+                }
+            }
+        }
+    },
+    "navbar_routes": {
+        "Wiki": "/wiki"
+    },
+    "useEvents": false,
+    "permissions": {
+        "available": [],
+        "default": {
+            "0": [],
+            "2": []
+        }
+    },
+    "requirements": {
+        "CMS": "^1.4.0"
+    }
+}
