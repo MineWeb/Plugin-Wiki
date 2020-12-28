@@ -1,11 +1,11 @@
 <?php App::import('Controller', 'WikiController'); ?>
 <section class="content">
     <div class="col-md-12">
-        <div class="box">
-            <div class="box-header with-border">
-                <h2 class="box-title"><?= $Lang->get("WIKI__TITLE_CATE_ADMIN"); ?></h2>
+        <div class="card">
+            <div class="card-header with-border">
+                <h2 class="card-title"><?= $Lang->get("WIKI__TITLE_CATE_ADMIN"); ?></h2>
             </div>
-            <div class="box-body">
+            <div class="card-body">
                 <div class="row">
                     <div class="col-sm-6">
                         <h4><?= $Lang->get("WIKI__CREATE_CATE"); ?></h4>
@@ -33,12 +33,18 @@
                                 <?php foreach($wcategories as $wcategorie): ?>
                                 <tr>
                                     <td><?= $wcategorie['Wcategories']['name']; ?></td>
-                                    <td><a class="btn btn-primary" href="/admin/wiki/categorie_edit/<?= $wcategorie['Wcategories']['id']; ?>"><?= $Lang->get('WIKI__EDIT_BTN_ACTION'); ?></a></td>
                                     <td>
-                                        <form class="form-horizontal" method="POST" data-ajax="true" action="<?= $this->Html->url(array('controller' => 'Wiki', 'action' => 'delete_categorie')) ?>" data-redirect-url="?">
-                                            <input type="hidden" name="id_categorie_delete" value="<?= $wcategorie['Wcategories']['id']; ?>">
-                                            <button class="btn btn-danger"><?= $Lang->get('WIKI__DELETE_BTN_ACTION'); ?></button>
-                                        </form>
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <a class="btn btn-primary" href="/admin/wiki/categorie_edit/<?= $wcategorie['Wcategories']['id']; ?>"><?= $Lang->get('WIKI__EDIT_BTN_ACTION'); ?></a>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <form class="form-horizontal" method="POST" data-ajax="true" action="<?= $this->Html->url(array('controller' => 'Wiki', 'action' => 'delete_categorie')) ?>" data-redirect-url="?">
+                                                    <button class="btn btn-danger"><?= $Lang->get('WIKI__DELETE_BTN_ACTION'); ?></button>
+                                                    <input type="hidden" name="id_categorie_delete" value="<?= $wcategorie['Wcategories']['id']; ?>">
+                                                </form>
+                                            </div>
+                                        </div>
                                     </td>
                                 </tr>
                                 <?php endforeach; ?>

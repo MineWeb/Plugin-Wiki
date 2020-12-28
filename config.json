@@ -1,8 +1,7 @@
 {
     "name": "Wiki",
     "author": "EmpireDev",
-    "version": "1.0.6",
-    "apiID": 0,
+    "version": "1.0.7",
     "admin_menus": {
         "GLOBAL__ADMIN_PLUGINS": {
             "Wiki": {
@@ -32,6 +31,6 @@
         }
     },
     "requirements": {
-        "CMS": "^1.4.0"
+        "CMS": "^1.11.0"
     }
 }
