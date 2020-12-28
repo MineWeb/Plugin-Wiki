@@ -5,11 +5,11 @@ $Wiki = new WikiController();
 <section class="content">
     <div class="col-md-12">
         <h2><?= $Lang->get('WIKI__TITLE_REGISTRE_ADMIN'); ?></h2>
-        <div class="box">
-            <div class="box-header with-border">
-                <h2 class="box-title"><?= $Lang->get('WIKI__LIST_REGISTRE'); ?></h2>
+        <div class="card">
+            <div class="card-header with-border">
+                <h2 class="card-title"><?= $Lang->get('WIKI__LIST_REGISTRE'); ?></h2>
             </div>
-            <div class="box-body">
+            <div class="card-body">
                 <div class="row">
                     <div class="col-sm-12">
                         <div style="overflow:auto;">
@@ -31,11 +31,17 @@ $Wiki = new WikiController();
                                         <td><?= substr($wregistre['Wregistre']['miniature'], 0, 40); ?>...</td>
                                         <td><?= substr($wregistre['Wregistre']['desc'], 0, 40); ?>...</td>
                                         <td>
-                                            <a class="btn btn-primary" href="/admin/wiki/registre_edit/<?= $wregistre['Wregistre']['id']; ?>"><?= $Lang->get('WIKI__EDIT_BTN_ACTION'); ?></a>
-                                            <form class="form-horizontal" method="POST" data-ajax="true" action="<?= $this->Html->url(array('controller' => 'Wiki', 'action' => 'delete_registre')) ?>" data-redirect-url="?">
-                                                <input type="hidden" name="id_registre_delete" value="<?= $wregistre['Wregistre']['id']; ?>">
-                                                <button class="btn btn-danger"><?= $Lang->get('WIKI__DELETE_BTN_ACTION'); ?></button>
-                                            </form>
+                                            <div class="row">
+                                                <div class="col-sm-4">
+                                                    <a class="btn btn-primary" href="/admin/wiki/registre_edit/<?= $wregistre['Wregistre']['id']; ?>"><?= $Lang->get('WIKI__EDIT_BTN_ACTION'); ?></a>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <form class="form-horizontal" method="POST" data-ajax="true" action="<?= $this->Html->url(array('controller' => 'Wiki', 'action' => 'delete_registre')) ?>" data-redirect-url="?">
+                                                        <input type="hidden" name="id_registre_delete" value="<?= $wregistre['Wregistre']['id']; ?>">
+                                                        <button class="btn btn-danger"><?= $Lang->get('WIKI__DELETE_BTN_ACTION'); ?></button>
+                                                    </form>
+                                                </div>
+                                            </div>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -46,11 +52,11 @@ $Wiki = new WikiController();
                 </div>
             </div>
         </div>
-        <div class="box">
-            <div class="box-header with-border">
-                <h2 class="box-title">Créer un registre</h2>
+        <div class="card">
+            <div class="card-header with-border">
+                <h2 class="card-title">Créer un registre</h2>
             </div>
-            <div class="box-body">
+            <div class="card-body">
                 <div class="row">
                     <div class="col-sm-12">
                         <form method="POST" data-ajax="true" data-redirect-url="?" action="<?= $this->Html->url(array('controller' => 'Wiki', 'action' => 'add_registre')) ?>">
