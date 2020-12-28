@@ -4,11 +4,11 @@ $Wiki = new WikiController();
 ?>
 <section class="content">
     <div class="col-md-12">
-        <div class="box">
-            <div class="box-header with-border">
-                <h2 class="box-title"><?= $Lang->get("WIKI__TITLE_REGISTRE_ADMIN"); ?></h2>
+        <div class="card">
+            <div class="card-header with-border">
+                <h2 class="card-title"><?= $Lang->get("WIKI__TITLE_REGISTRE_ADMIN"); ?></h2>
             </div>
-            <div class="box-body">
+            <div class="card-body">
                 <div class="row">
                     <div class="col-sm-12">
                         <h4><?= $Lang->get("WIKI__UPDATE_REGISTER"); ?></h4>
