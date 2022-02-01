@@ -10,14 +10,18 @@
                     <div class="col-sm-6">
                         <h4><?= $Lang->get('WIKI__UPDATE_CATE'); ?></h4>
                         <hr>
-                        <form method="POST" data-ajax="true" data-redirect-url="/admin/wiki/categories" action="<?= $this->Html->url(array('controller' => 'Wiki', 'action' => 'update_categorie')) ?>">
+                        <form method="POST" data-ajax="true" data-redirect-url="/admin/wiki/categories"
+                              action="<?= $this->Html->url(['controller' => 'Wiki', 'action' => 'update_categorie']) ?>">
                             <input type="hidden" name="id" value="<?= $id; ?>" class="form-control">
                             <label><?= $Lang->get('WIKI__NAME_OF_CATE'); ?></label>
-                            <input type="text" name="name_cate" value="<?= $wcategorie['name']; ?>" class="form-control">
+                            <input type="text" name="name_cate" value="<?= $wcategorie['name']; ?>"
+                                   class="form-control">
                             <label><?= $Lang->get('WIKI__URL_OF_MINIATURE'); ?></label>
-                            <input type="text" name="miniature_cate" value="<?= $wcategorie['miniature']; ?>" class="form-control">
+                            <input type="text" name="miniature_cate" value="<?= $wcategorie['miniature']; ?>"
+                                   class="form-control">
                             <hr>
-                            <button class="btn btn-primary" type="submit"><?= $Lang->get('WIKI__CREATE_BTN_ACTION'); ?></button>
+                            <button class="btn btn-primary"
+                                    type="submit"><?= $Lang->get('WIKI__CREATE_BTN_ACTION'); ?></button>
                         </form>
                     </div>
                 </div>

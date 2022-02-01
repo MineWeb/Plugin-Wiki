@@ -13,35 +13,40 @@ $Wiki = new WikiController();
                     <div class="col-sm-12">
                         <h4><?= $Lang->get("WIKI__UPDATE_REGISTER"); ?></h4>
                         <hr>
-                        <form method="POST" data-ajax="true" data-redirect-url="/admin/wiki/registre" action="<?= $this->Html->url(array('controller' => 'Wiki', 'action' => 'update_registre')) ?>">
+                        <form method="POST" data-ajax="true" data-redirect-url="/admin/wiki/registre"
+                              action="<?= $this->Html->url(['controller' => 'Wiki', 'action' => 'update_registre']) ?>">
                             <input type="hidden" name="id" value="<?= $id; ?>" class="form-control">
                             <label><?= $Lang->get("WIKI__NAME_OF_REGISTRE"); ?></label>
-                            <input type="text" name="name_registre" value="<?= $wregistre['Wregistre']['name']; ?>" class="form-control">
+                            <input type="text" name="name_registre" value="<?= $wregistre['Wregistre']['name']; ?>"
+                                   class="form-control">
                             <label><?= $Lang->get("WIKI__URL_OF_MINIATURE"); ?></label>
-                            <input type="text" name="miniature_registre" value="<?= $wregistre['Wregistre']['miniature']; ?>" class="form-control">
+                            <input type="text" name="miniature_registre"
+                                   value="<?= $wregistre['Wregistre']['miniature']; ?>" class="form-control">
                             <label><?= $Lang->get("WIKI__CATEGORIE"); ?></label>
                             <select class="form-control" name="cate_registre">
-                            	<option value="<?= $wregistre['Wregistre']['cate_id']; ?>"><?= $Wiki->getCategorie($wregistre['Wregistre']['cate_id']); ?></option>
-                            	<?php foreach ($wcategories as $wcategorie) { ?>
-                            		<option value="<?= $wcategorie['Wcategories']['id']; ?>"><?= $wcategorie['Wcategories']['name']; ?></option>
-                            	<?php }?>
+                                <option value="<?= $wregistre['Wregistre']['cate_id']; ?>"><?= $Wiki->getCategorie($wregistre['Wregistre']['cate_id']); ?></option>
+                                <?php foreach ($wcategories as $wcategorie) { ?>
+                                    <option value="<?= $wcategorie['Wcategories']['id']; ?>"><?= $wcategorie['Wcategories']['name']; ?></option>
+                                <?php } ?>
                             </select>
                             <?= $this->Html->script('admin/tinymce/tinymce.min.js') ?>
                             <script type="text/javascript">
-                            tinymce.init({
-                                selector: "textarea",
-                                height : 300,
-                                language : 'fr_FR',
-                                value : 'test',
-                                width : '100%',
-                                plugins: "textcolor image link",
-                                toolbar: "fontselect fontsizeselect bold italic underline strikethrough link image forecolor backcolor alignleft aligncenter alignright alignjustify cut copy paste bullist numlist outdent indent blockquote code"
-                            });
+                                tinymce.init({
+                                    selector: "textarea",
+                                    height: 300,
+                                    language: 'fr_FR',
+                                    value: 'test',
+                                    width: '100%',
+                                    plugins: "textcolor image link",
+                                    toolbar: "fontselect fontsizeselect bold italic underline strikethrough link image forecolor backcolor alignleft aligncenter alignright alignjustify cut copy paste bullist numlist outdent indent blockquote code"
+                                });
                             </script>
                             <label><?= $Lang->get("WIKI__DESC_OF_REGISTRE"); ?></label>
-                            <textarea id="editor"  name="desc_registre" cols="30" rows="10"><?= $wregistre['Wregistre']['desc']; ?></textarea>
+                            <textarea id="editor" name="desc_registre" cols="30"
+                                      rows="10"><?= $wregistre['Wregistre']['desc']; ?></textarea>
                             <hr>
-                            <button class="btn btn-primary" type="submit"><?= $Lang->get("WIKI__EDIT_BTN_ACTION"); ?></button>
+                            <button class="btn btn-primary"
+                                    type="submit"><?= $Lang->get("WIKI__EDIT_BTN_ACTION"); ?></button>
                         </form>
                     </div>
                 </div>

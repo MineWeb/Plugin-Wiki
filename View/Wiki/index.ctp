@@ -3,9 +3,10 @@
         <h2><?= $title_for_layout; ?> - <?= (isset($website_name)) ? $website_name : 'MineWeb' ?></h2>
         <hr>
         <div id="cate_wiki">
-            <?php foreach($wcategories as $wcategorie): ?>
+            <?php foreach ($wcategories as $wcategorie): ?>
                 <div class="col-sm-3">
-                    <div style="cursor:pointer;" onclick="loadWiki('<?= $wcategorie['Wcategories']['id']; ?>');" class="panel panel-default">
+                    <div style="cursor:pointer;" onclick="loadWiki('<?= $wcategorie['Wcategories']['id']; ?>');"
+                         class="panel panel-default">
                         <div class="panel-body">
                             <img style="width:100%;" src="<?= $wcategorie['Wcategories']['miniature']; ?>">
                             <hr>
